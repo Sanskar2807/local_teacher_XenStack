@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../assets//Images/favicon.ico">
+    <title>Shikshak Shaakha</title>
+    <link href="../assets/Dashboard.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+</head>
+
+<body>
+
+    <% if(cuser){ %>
+        <%- include('./UpdateNav.ejs') %>
+            <% }else{ %>
+                <%- include('./Navbar.ejs') %>
+                    <% } %>
+
+                        <!-- =========== Database Teachers Data =================== -->
+                        <div class="container profile-page">
+                            <div class="row col-lg-12 mt-5 pt-3">
+
+                                <div class="subjectButton">
+                                    <button type="button" class="btn btn-primary btn-sm">Subject Name</button>
+                                </div>
+
+                                <p class="title">write something tag line related to subject like--- Mathematics 10
+                                    class in Kota with full confidence from zero to hero</p>
+
+                                <h4>Class location</h4>
+
+                                <div class="card" style="width: 18rem;">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                                        <p class="card-text">Some quick example text to build on the card title and make
+                                            up the bulk of the card's content.</p>
+
+                                    </div>
+                                </div>
+
+                                <h2>About teacher discription-----</h2>
+
+                                Rates
+                                <div class="card" style="width: 18rem;">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                                        <p class="card-text">Some quick example text to build on the card title and make
+                                            up the bulk of the card's content.</p>
+
+                                    </div>
+                                </div>
+
+
+                                <% if(records.length>0){ %>
+                                    <% records.forEach(function(info){ %>
+                                        <div class="col-xl-6 col-lg-6 col-md-12 d-flex">
+                                            <div class="card profile-header">
+                                                <div class="body">
+                                                    <div class="row col-lg-12 mx-auto card-info">
+                                                        <div class="col-lg-4 col-md-4 col-12 mx-auto profile">
+                                                            <div class="profile-image float-md-right">
+                                                                <img src="https://bootdey.com/img/Content/avatar/avatar7.png"
+                                                                    alt="">
+                                                            </div>
+                                                            <h4 class="mt-4 mb-4 text-center"><strong>
+                                                                    <%= info.name %>
+                                                                </strong></h4>
+                                                            <p class=" m-t-5 m-b-0 text-center">
+                                                                <a title="Twitter" href="mailto:<%= info.email %>"><i
+                                                                        class="fa fa-envelope social"></i></a>
+                                                                <a title="Facebook" target="_blank"
+                                                                    href="<%= info.facebook %>"><i
+                                                                        class="fa fa-facebook social"></i></a>
+                                                                <a title="Instagram" target="_blank"
+                                                                    href="<%= info.instagram %>"><i
+                                                                        class="fa fa-instagram social"></i></a>
+                                                            </p>
+                                                            <div class="text-center">
+                                                                <a href="/">
+                                                                    <button type="submit"
+                                                                        class="btn btn-outline-success text-white  ">
+                                                                        <b> Reserve </b>
+                                                                    </button>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-8 col-md-8 col-12 mx-auto profile-info">
+                                                            <p><b>Gender </b>- <%= info.gender %>
+                                                            </p>
+                                                            <p><b>Email </b>-<%= info.email %>
+                                                            </p>
+                                                            <p><b>Phone </b>-<%= info.phone %>
+                                                            </p>
+                                                            <p><b>Subject </b>-<%= info.subject %>
+                                                            </p>
+                                                            <p><b>Qualification </b>-<%= info.qualification %>
+                                                            </p>
+                                                            <p><b>Address </b>-<%= info.address %>
+                                                            </p>
+                                                            <p><b>City </b>-<%= info.city %>
+                                                            </p>
+                                                            <p><b>Pincode </b>-<%= info.pincode %>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <% })} else{ %>
+                                            <p class="not-found"><i class='fas fa-frown'></i> Sorry No Result Found</p>
+                                            <% } %>
+                            </div>
+                        </div>
+</body>
+
+</html>
